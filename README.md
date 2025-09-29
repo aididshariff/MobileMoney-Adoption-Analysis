@@ -25,8 +25,8 @@ The main analysis will focus on answering questions like:
 ## Getting Started
 1. Clone this repository:
 ``` 
-```git clone git@github.com:aididshariff/MobileMoney-Adoption-Analysis.git```
-```cd MobileMoney-Adoption-Analysis```
+git clone git@github.com:aididshariff/MobileMoney-Adoption-Analysis.git
+cd MobileMoney-Adoption-Analysis
 ```
 2. Install the required Python libraries:
 ```
