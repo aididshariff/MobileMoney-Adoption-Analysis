@@ -15,6 +15,23 @@ The main analysis will focus on answering questions like:
 - Explore adoption trends using Python (Pandas, Matplotlib, Seaborn).
 - Visualize key insights with graphs and tables.
 
+## Project Structure
+```
+project_name/
+├── data/
+│ ├── raw/ # Raw data (not included in repo)
+│ ├── processed/ # Cleaned / transformed data
+│ └── codebook/ # Variable categories & descriptions
+├── notebooks/ # Jupyter notebooks
+├── scripts/ # Python scripts for automation
+├── outputs/ # Charts, reports, dashboards
+├── README.md # Project documentation
+└── requirements.txt # Python dependencies
+```
+## Codebook
+The file `data/codebook/Findex_2025_codebook.csv` contains variable names, assigned categories, and descriptions to help interpret the dataset.  
+Note: The underlying raw Findex microdata is proprietary and **not included** in this repository.
+
 ## Tools & Libraries
 - **Python 3**
 - **Pandas** – for data cleaning & manipulation
