@@ -1,5 +1,46 @@
 # Mobile Money Adoption Analysis
-This project explores **mobile money adoption in Kenya** using survey data. The goal is to practice **data cleaning, analysis and visualization** with a real-world dataset.
+This repository contains analysis of the **Global Findex Database 2025**, which provides data on financial inclusion and the use of digital financial services across more than 140 economies.  
+
+The project is designed as a beginner-friendly workflow while also keeping a professional structure for reproducibility and future extensions.  
+
+
+## Dataset  
+- **Source**: Global Findex Database 2025 (World Bank)  
+- **Note**: The underlying raw Findex microdata is proprietary and **not included** in this repository.
+
+
+## Codebook  
+The file `data/codebook/Findex_2025_codebook.csv` contains variable names, assigned categories, and descriptions to help interpret the dataset.
+
+
+## Planned Analysis Workflow  
+
+This is a step-by-step roadmap. Tasks will be marked when completed.  
+
+- [x] **Baseline: Financial Inclusion Levels**  
+  - Share of adults with an account (any, bank, or mobile money)  
+  - Country and regional summaries  
+
+- [ ] **Digital Finance Adoption**  
+  - Mobile account usage  
+  - Digital payments (sending/receiving money, paying bills, remittances)  
+
+- [ ] **Borrowing, Savings, and Insurance Behavior**  
+  - Borrowing sources (formal, informal, family/friends)  
+  - Saving patterns (formal vs. informal)  
+  - Insurance uptake  
+
+- [ ] **Barriers to Financial Access**  
+  - Reasons for being unbanked (cost, documentation, trust, distance, etc.)  
+
+- [ ] **Gaps & Inequalities**  
+  - Gender gap in account ownership  
+  - Differences by income group, education, or region  
+
+- [ ] **Policy & Practice Implications**  
+  - Summarize insights that matter for financial inclusion strategie
+
+
 
 ## Analysis Goals
 The main analysis will focus on answering questions like:
@@ -9,28 +50,23 @@ The main analysis will focus on answering questions like:
 4. **Mobile Money & Financial Inclusion** – How does mobile money improve access to financial services?
 5. **Trends** – Are adoption rates changing over time?
 
-## Project Overview
-- Understand how education, age, gender, and income affect mobile     money usage.
-- Clean messy survey data (missing values, inconsistent text, duplicates).
-- Explore adoption trends using Python (Pandas, Matplotlib, Seaborn).
-- Visualize key insights with graphs and tables.
 
-## Project Structure
+## Repository Structure
 ```
-project_name/
+MobileMoney-Adoption-Analysis/
 ├── data/
-│ ├── raw/ # Raw data (not included in repo)
-│ ├── processed/ # Cleaned / transformed data
-│ └── codebook/ # Variable categories & descriptions
-├── notebooks/ # Jupyter notebooks
-├── scripts/ # Python scripts for automation
-├── outputs/ # Charts, reports, dashboards
-├── README.md # Project documentation
-└── requirements.txt # Python dependencies
+│   ├── raw/          # Raw data (not included in repo)
+│   ├── processed/    # Cleaned / transformed data
+│   └── codebook/     # Variable categories & descriptions
+├── docs/             # Documentation (workflow, setup, analysis plan)
+├── notebooks/        # Jupyter notebooks
+├── scripts/          # Python scripts for automation
+├── outputs/          # Charts, reports, dashboards
+├── README.md         # Project documentation
+└── requirements.txt  # Python dependencies
+
 ```
-## Codebook
-The file `data/codebook/Findex_2025_codebook.csv` contains variable names, assigned categories, and descriptions to help interpret the dataset.  
-Note: The underlying raw Findex microdata is proprietary and **not included** in this repository.
+
 
 ## Tools & Libraries
 - **Python 3**
