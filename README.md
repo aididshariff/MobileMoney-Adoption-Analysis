@@ -81,6 +81,10 @@ pip install -r requirements.txt
 4. Run the notebooks in order ``` (01_cleaning.ipynb → 02_analysis.ipynb → 03_visualization.ipynb)```.
 
 
+## Documentation
+See [docs/analysis_plan.md](docs/analysis_plan.md) for the expanded analysis workflow.
+
+
 ## Notes for Beginners  
 - You don’t need to complete everything at once.  
 - Start with **Baseline Analysis** → then slowly move to digital finance, borrowing, and so on.  
