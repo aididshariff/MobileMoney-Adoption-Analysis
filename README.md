@@ -37,18 +37,9 @@ This is a step-by-step roadmap. Tasks will be marked when completed.
   - Gender gap in account ownership  
   - Differences by income group, education, or region  
 
+
 - [ ] **Policy & Practice Implications**  
-  - Summarize insights that matter for financial inclusion strategie
-
-
-
-## Analysis Goals
-The main analysis will focus on answering questions like:
-1. **Demographics & Adoption** – How do age, gender, and location affect mobile money usage?
-2. **Education & Adoption** – Are people with higher education more likely to use mobile money?
-3. **Income & Poverty Levels** – Is mobile money adoption higher among certain income groups?
-4. **Mobile Money & Financial Inclusion** – How does mobile money improve access to financial services?
-5. **Trends** – Are adoption rates changing over time?
+  - Summarize insights that matter for financial inclusion strategies
 
 
 ## Repository Structure
@@ -88,3 +79,15 @@ pip install -r requirements.txt
 3. Open Jupyter Notebook:
 ```  jupyter notebook ```
 4. Run the notebooks in order ``` (01_cleaning.ipynb → 02_analysis.ipynb → 03_visualization.ipynb)```.
+
+
+## Notes for Beginners  
+- You don’t need to complete everything at once.  
+- Start with **Baseline Analysis** → then slowly move to digital finance, borrowing, and so on.  
+- The workflow is a **map of possibilities** — treat it like a live checklist.  
+
+---
+
+## Citation  
+When using this dataset, please cite:  
+**Klapper, L., Singer, D., Norris, A., & Starita, L. (2025). Global Findex Database 2025: Connectivity and Financial Inclusion in the Digital Economy. World Bank. DOI: https://doi.org/10.60572/rvnp-6q76**
