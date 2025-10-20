@@ -13,33 +13,6 @@ The project is designed as a beginner-friendly workflow while also keeping a pro
 The file `data/codebook/Findex_2025_codebook.csv` contains variable names, assigned categories, and descriptions to help interpret the dataset.
 
 
-## Planned Analysis Workflow  
-
-This is a step-by-step roadmap. Tasks will be marked when completed.  
-
-- [x] **Baseline: Financial Inclusion Levels**  
-  - Share of adults with an account (any, bank, or mobile money)  
-  - Country and regional summaries  
-
-- [ ] **Digital Finance Adoption**  
-  - Mobile account usage  
-  - Digital payments (sending/receiving money, paying bills, remittances)  
-
-- [ ] **Borrowing, Savings, and Insurance Behavior**  
-  - Borrowing sources (formal, informal, family/friends)  
-  - Saving patterns (formal vs. informal)  
-  - Insurance uptake  
-
-- [ ] **Barriers to Financial Access**  
-  - Reasons for being unbanked (cost, documentation, trust, distance, etc.)  
-
-- [ ] **Gaps & Inequalities**  
-  - Gender gap in account ownership  
-  - Differences by income group, education, or region  
-
-
-- [ ] **Policy & Practice Implications**  
-  - Summarize insights that matter for financial inclusion strategies
 
 
 ## Repository Structure
@@ -49,10 +22,10 @@ MobileMoney-Adoption-Analysis/
 │   ├── raw/          # Raw data (not included in repo)
 │   ├── processed/    # Cleaned / transformed data
 │   └── codebook/     # Variable categories & descriptions
-├── docs/             # Documentation (workflow, setup, analysis plan)
+├── docs/             # Documentation 
 ├── notebooks/        # Jupyter notebooks
 ├── scripts/          # Python scripts for automation
-├── outputs/          # Charts, reports, dashboards
+├── outputs/          # Charts, dashboards
 ├── README.md         # Project documentation
 └── requirements.txt  # Python dependencies
 
@@ -81,16 +54,64 @@ pip install -r requirements.txt
 4. Run the notebooks in order ``` (01_cleaning.ipynb → 02_analysis.ipynb → 03_visualization.ipynb)```.
 
 
-## Documentation
-See [docs/analysis_plan.md](docs/analysis_plan.md) for the expanded analysis workflow.
+## REPORT
+
+**Final Model Evaluation: Linear Regression vs. Random Forest Regressor**
+
+The project transitioned from a simple linear model to a powerful ensemble model to overcome data complexity and maximize predictive accuracy for Mobile Money Adoption.
+
+1. **Linear Regression (OLS) Analysis:**
+The corrected OLS model established**statistical inference** but failed at **prediction** due to violated assumptions.
+
+**Performance & Assumption Check**
+| Metric/Assumption |	Result | Interpretation |
+| :--- | :---: | :--- |
+| **R-squared ($\text{R}^2$)** | $0.127$ | **Poor Fit.** The model explains only $12.7\%$ of variance. |
+| **VIF** | (Max Score)$< 5$ | **Stable.** Multicollinearity fixed; coefficients are reliable. |
+| **Linearity** (Residuals) |	**Violated** |	Non-random pattern confirms a non-linear relationship. |
+
+**Key Statistical Drivers ($\text{P} < 0.05$)**
+
+|Feature | Coefficient (coef) | Rank in OLS | 
+| :--- | :---: | :--- |
+| **regionwb24_hi_Sub-Saharan Africa...** | $+0.0970$ | **1** |
+| **year** | $+0.0414$ | **2** |
+| **account_t_d** (Traditional Banking) | $+0.0396$ | **3** |
+
+2. **Random Forest Regressor Analysis:**
+The Random Forest model was chosen to address the non-linearity, resulting in a **massive improvement in predictive power.**
+
+**Model Performance**
+
+| Metric |	Linear Regression (Final) |	Random Forest Regressor	|Improvement |
+| :--- | :---: | :---:| :--- |
+| **R-squared ($\text{R}^2$)$** | 0.127$ | $0.6804 | $+534% **Increase** |
+| **RMSE** | $0.1634$ | $0.0984$ | $\approx 40\%$ **Reduction in Error** |
+
+**Key Predictive Drivers (Feature Importance):**
+| Rank | Feature | Importance Score |	OLS P-value |
+| :--- | :---: | :---: | :--- |
+| **1** | **pop_adult** (Adult Population Size) | $0.311$ | $0.234$ (Not Significant) |
+| **2** | **account_t_d** (Traditional Banking Access) | $0.237$ | $0.000$ (Highly Significant) |
+| **3** | **internet** (Internet Penetration) | $0.180$ | $0.000$ (Highly Significant) |
+| **4** | **year** (Time Trend) | $0.119$ | $0.000$ (Highly Significant) |
+
+**Final Conclusion and Insights:**
+
+1. Success of Non-Linear Modeling
+The project successfully achieved its predictive goal. By correctly diagnosing the failure of the linear model and pivoting to the Random Forest Regressor, the model's accuracy surged, explaining over **two-thirds of the variance** in Mobile Money Adoption.
+
+2. Contradictory Driver:**Adult Population** ($\text{pop\_adult}$)
+The most valuable modeling insight is the contrasting role of Adult Population Size ($\text{pop\_adult}$):
+    - The OLS model (straight-line assumption) dismissed it as insignificant.
+    - The Random Forest model identified it as the **single most important predictor** ($\text{Importance} = 31.1\%$) for maximizing predictive accuracy.
+This demonstrates that the relationship between population and adoption is highly non-linear, likely acting as a critical threshold or interacting with other features (like internet/banking access) in complex ways that only the Random Forest could capture.
+
+3. Confirmed Foundational Drivers
+The Random Forest confirmed the OLS findings that Traditional Banking Access ($\text{account\_t\_d}$) and Internet Penetration are foundational, positively correlated factors in driving mobile money adoption. The Sub-Saharan Africa region remains the most important feature, confirming its unique role in the global adoption landscape.
 
 
-## Notes for Beginners  
-- You don’t need to complete everything at once.  
-- Start with **Baseline Analysis** → then slowly move to digital finance, borrowing, and so on.  
-- The workflow is a **map of possibilities** — treat it like a live checklist.  
 
----
 
 ## Citation  
 When using this dataset, please cite:  
