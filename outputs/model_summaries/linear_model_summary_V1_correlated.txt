@@ -1,0 +1,6 @@
+--- Linear Regression V1: Correlated Variables ---
+R-squared: 0.1184
+Mean Squared Error (MSE): 0.0267
+Root Mean Squared Error (RMSE): 0.1634
+
+NOTE: This model contains correlated independent variables (multicollinearity).
