@@ -130,7 +130,7 @@ When using the Findex dataset, cite:
 - Aidid Alwi
 - Affiliation: Independent researcher 
 - GitHub: https://github.com/aididshariff
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aididalwi/)
-- Tableau: [Tableau](https://public.tableau.com/app/profile/aidid.alwi)
+- LinkedIn: [Link](https://www.linkedin.com/in/aididalwi/)
+- Tableau: [Link](https://public.tableau.com/app/profile/aidid.alwi)
 
 
