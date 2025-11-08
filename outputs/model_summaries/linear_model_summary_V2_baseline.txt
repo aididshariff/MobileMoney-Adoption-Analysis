@@ -1,5 +1,0 @@
- --- Linear Regression V2: Clean Baseline ---
-R-squared (Final Baseline): 0.1182
-Mean Squared Error (MSE): 0.0267
-
-NOTE: Best linear model (VIF corrected) used as baseline.

@@ -17,3 +17,17 @@ env/
 
 # Data
 data/raw/
+data/processed/
+
+# Generated outputs
+outputs/
+
+# Environment & editor
+.env
+.vscode/
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
